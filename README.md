@@ -1,39 +1,36 @@
-Gerenciador de Usuários e Itens
-Este projeto é uma API desenvolvida em Django que oferece funcionalidades para o gerenciamento de usuários e itens. Ele fornece endpoints RESTful para criar, atualizar, excluir e recuperar informações de usuários e itens. Este sistema é ideal para aplicações que necessitam de um backend robusto para a gestão de usuários e inventário.
+GerenciadorAPI
+Este projeto é um sistema de gerenciamento de usuários, itens e pedidos, construído com Django e Django Rest Framework.
 
-Funcionalidades:
+Funcionalidades
+
 Gerenciamento de Usuários
- - Criação de novos usuários com nome de usuário e senha exclusivos
- - Autenticação de usuários
- - Atualização de informações de perfil de usuários (nome completo, e-mail, etc.)
- - Recuperação de informações de perfil de usuários
- 
+ - Criação de novos usuários com nome de usuário, e-mail e senha.
+ - Atualização de informações do usuário, incluindo nome, e-mail e senha.
+ - Exclusão de usuários do sistema.
+ - Recuperação de uma lista de todos os usuários cadastrados.
+
 Gerenciamento de Itens
- - Criação de novos itens com nome e preço
- - Atualização do nome e preço dos itens
- - Exclusão de itens
- - Recuperação de uma lista de todos os itens
+ - Criação de novos itens com nome e preço.
+ - Atualização do nome e preço de um item existente.
+ - Exclusão de itens do sistema.
+ - Recuperação de uma lista de todos os itens cadastrados.
 
-Tecnologias Utilizadas
- - Django
- - Django REST Framework
- - SQLite (ou outro banco de dados compatível com Django)
- - Python 3.12.3
+Gerenciamento de Pedidos
+ - Criação de novos pedidos para um usuário, contendo um ou vários itens.
+ - Recuperação de todos os pedidos de um usuário.
+ - Recuperação de detalhes de um pedido específico, incluindo os itens associados.
 
-Como Rodar o Projeto
-1. Clone o repositório:
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+Estrutura do Projeto
+O projeto está estruturado da seguinte forma:
 
-2. Crie e ative um ambiente virtual:
-   python -m venv myenv
-   source myenv/bin/activate  # No Windows: myenv\Scripts\activate
+ - users: Contém os modelos, serializers e viewsets relacionados aos usuários.
+ - itens: Contém os modelos, serializers e viewsets relacionados aos itens.
+ - pedidos: Contém os modelos, serializers e viewsets relacionados aos pedidos.
+ - api: Contém as views e rotas da API.
 
-3. Instale as dependências:
-   pip install -r requirements.txt
-
-4. Aplique as migrações do banco de dados:
-   python manage.py makemigrations
-   python manage.py migrate
-
-5. Inicie o servidor:
-   python manage.py runserver
+Configuração e Uso
+ 1. Clone o repositório: git clone https://github.com/CassioBubanz/GerenciadorAPI.git
+ 2. Instale as dependências: pip install -r requirements.txt
+ 3. Execute as migrações do banco de dados: python manage.py migrate
+ 4. Inicie o servidor: python manage.py runserver
+ 5. Acesse a API em http://localhost:8000/
